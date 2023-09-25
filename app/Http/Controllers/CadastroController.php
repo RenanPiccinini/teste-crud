@@ -28,7 +28,7 @@ class CadastroController extends Controller
     {
         $this->CadastroService->create($request);
 
-        return redirect()->route('index')->with('message', 'Cadastro efetuado com sucesso');
+        return redirect()->route('lista-cadastros')->with('message', 'Cadastro efetuado com sucesso');
     }
 
     public function list()
@@ -39,4 +39,21 @@ class CadastroController extends Controller
             'cadastros' => $cadastros,
         ]);
     }
+
+    public function edit($id)
+    {
+        $cadastro = $this->CadastroService->edit($id);
+
+        return view('cadastro.editar-cadastro', [
+            'cadastro' => $cadastro
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->CadastroService->update($request, $id);
+
+        return redirect()->route('lista-cadastros')->with('message', 'Cadastro editado com sucesso');
+    }
+
 }

@@ -24,4 +24,23 @@ class CadastroService
 
         return $cadastros;
     }
+
+    public function edit($id)
+    {
+        $cadastro = Cadastro::find($id);
+
+        return $cadastro;
+    }
+
+    public function update($request, $id)
+    {
+        $cadastro = Cadastro::find($id);
+        $cadastro->nome = $request->input('nome');
+        $cadastro->telefone = $request->input('telefone');
+        $cadastro->email = $request->input('email');
+        $cadastro->save();
+
+        return $cadastro;
+    }
+
 }
