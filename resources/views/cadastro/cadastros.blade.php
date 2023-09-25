@@ -36,16 +36,6 @@
                                                     <a class="btn btn-warning" href="{{ route('editar-cadastro', $cadastro->id)}}">Editar</a>
                                                 </div>
                                             </td>
-                                            {{--
-                                            <td>
-                                                <div class="d-flex justify-content-center">
-                                                    <form action="{{ route('excluir-funcionario', $user->id) }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir este funcionário?')">Excluir</button>
-                                                    </form>
-                                                </div>
-                                            </td> --}}
                                         </tr>
                                     @endforeach
 
