@@ -9,7 +9,7 @@
                     <h1>Lista cadastros</h1>
 
                         @if(session('message'))
-                            <div class="alert alert-success col-md-3" id="alert" role="alert">
+                            <div class="alert alert-success col-md-12" id="alert" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
@@ -21,6 +21,7 @@
                                         <th>Nome</th>
                                         <th>E-mail</th>
                                         <th>Telefone</th>
+                                        <th>Editar</th>
                                     </tr>
                                 </thead>
 
@@ -30,6 +31,11 @@
                                             <td>{{ $cadastro->nome }}</td>
                                             <td>{{ $cadastro->email }}</td>
                                             <td>{{ $cadastro->telefone }}</td>
+                                            <td>
+                                                <div class="d-flex justify-content-center">
+                                                    <a class="btn btn-warning" href="{{ route('editar-cadastro', $cadastro->id)}}">Editar</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
 
@@ -41,5 +47,13 @@
         </div>
     </div>
 
-
 @endsection
+
+<script>
+    setTimeout(function() {
+        var alertElement = document.getElementById('alert');
+        if (alertElement) {
+            alertElement.remove();
+        }
+    }, 3000);
+</script>
