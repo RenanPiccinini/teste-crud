@@ -26,7 +26,7 @@
                 <a class="nav-link" href="{{ route('index') }}">Página Inicial</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Lista dos cadastro</a>
+                <a class="nav-link" href="{{ route('lista-cadastros') }}">Lista dos cadastro</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('criar-cadastro') }}">Criar Cadastro</a>

@@ -26,8 +26,17 @@ class CadastroController extends Controller
 
     public function store(Request $request)
     {
-        $cadastro = $this->CadastroService->create($request);
+        $this->CadastroService->create($request);
 
         return redirect()->route('index')->with('message', 'Cadastro efetuado com sucesso');
+    }
+
+    public function list()
+    {
+        $cadastros = $this->CadastroService->list();
+
+        return view('cadastro.cadastros', [
+            'cadastros' => $cadastros,
+        ]);
     }
 }

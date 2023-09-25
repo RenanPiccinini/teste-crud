@@ -17,4 +17,11 @@ class CadastroService
 
         return $cadastro;
     }
+
+    public function list()
+    {
+        $cadastros = Cadastro::all();
+
+        return $cadastros;
+    }
 }
