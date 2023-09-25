@@ -12,3 +12,5 @@ Route::get('/cadastros', [CadastroController::class, 'list'])->name('lista-cadas
 
 Route::get('/editar-cadastro/{id}', [ CadastroController::class, 'edit'])->name('editar-cadastro');
 Route::put('/editar-cadastro/{id}', [ CadastroController::class, 'update'])->name('editar-cadastro-post');
+
+Route::delete('/deletar-cadastro/{id}', [CadastroController::class, 'delete'])->name('deletar-cadastro');
