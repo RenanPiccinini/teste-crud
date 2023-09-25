@@ -25,7 +25,6 @@
                                         <th>Excluir</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @foreach($cadastros as $cadastro)
                                         <tr>
