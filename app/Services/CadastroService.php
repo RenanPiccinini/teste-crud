@@ -43,4 +43,11 @@ class CadastroService
         return $cadastro;
     }
 
+    public function delete($id)
+    {
+        $cadastro = Cadastro::find($id);
+
+        $cadastro->delete();
+    }
+
 }

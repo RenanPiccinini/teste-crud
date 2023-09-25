@@ -56,4 +56,11 @@ class CadastroController extends Controller
         return redirect()->route('lista-cadastros')->with('message', 'Cadastro editado com sucesso');
     }
 
+    public function delete($id)
+    {
+        $this->CadastroService->delete($id);
+
+        return redirect()->route('lista-cadastros')->with('message', 'Cadastro excluido com sucesso');
+    }
+
 }
