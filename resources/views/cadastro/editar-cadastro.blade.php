@@ -4,6 +4,16 @@
 
     <h1>Editar cadastro</h1>
 
+    @if($errors->any())
+        <div class="alert alert-danger rounded-3" id="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form class="row g-3" action="{{ route('editar-cadastro-post', $cadastro->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -24,5 +34,13 @@
         <button class="btn btn-success mt-4 ml-3">Salvar</button>
     </form>
 
-
 @endsection
+
+<script>
+    setTimeout(function() {
+        var alertElement = document.getElementById('alert');
+        if (alertElement) {
+            alertElement.remove();
+        }
+    }, 3000);
+</script>
