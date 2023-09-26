@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CadastroRequest;
 use App\Services\CadastroService;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class CadastroController extends Controller
         return view('cadastro.criar-cadastro');
     }
 
-    public function store(Request $request)
+    public function store(CadastroRequest $request)
     {
         $this->CadastroService->create($request);
 
@@ -49,7 +50,7 @@ class CadastroController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(CadastroRequest $request, $id)
     {
         $this->CadastroService->update($request, $id);
 

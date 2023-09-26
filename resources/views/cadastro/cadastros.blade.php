@@ -6,7 +6,7 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="container">
-                    <h1>Lista cadastros</h1>
+                    <h1>Lista dos cadastros</h1>
 
                         @if(session('message'))
                             <div class="alert alert-success col-md-12" id="alert" role="alert">
